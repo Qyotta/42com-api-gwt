@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- /******************************************************************************* * Qyotta UG (haftungsbeschränkt) (http://www.qyotta.de). * All rights reserved. * Copyright (c) 2012 Qyotta UG *******************************************************************************/ -->
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.0.3//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.0.3/distro-source/core/src/gwt-module.dtd">
+<module rename-to="Api">
+   <inherits name="com.google.gwt.user.User" />
+   <source path="client" />
+
+   <generate-with class="de.qyotta.fourtytwocom.api.generators.ConfigurationConstantsGenerator">
+      <when-type-assignable class="de.qyotta.fourtytwocom.api.client.utils.ConfigurationConstants" />
+   </generate-with>
+   
+   <define-configuration-property name="domain" is-multi-valued="false" />
+   
+   <set-configuration-property name="domain" value="http://login.42call.com/api/rest/v3/" />
+</module>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <parent>
+      <groupId>de.qyotta</groupId>
+      <artifactId>de.qyotta.fourtytwocom.api-root</artifactId>
+      <version>3.0.0</version>
+   </parent>
+
+   <groupId>de.qyotta</groupId>
+   <artifactId>de.qyotta.fourtytwocom.api</artifactId>
+   <version>3.0.0</version>
+   <packaging>war</packaging>
+   <name>${project.artifactId}</name>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-eclipse-plugin</artifactId>
+            <version>${maven.eclipse.plugin.version}</version>
+
+            <configuration>
+               <downloadSources>true</downloadSources>
+               <downloadJavadocs>false</downloadJavadocs>
+               <buildOutputDirectory>src/main/webapp/WEB-INF/classes</buildOutputDirectory>
+               <projectnatures>
+                  <projectnature>org.eclipse.jdt.core.javanature</projectnature>
+                  <projectnature>com.google.gdt.eclipse.core.webAppNature</projectnature>
+
+                  <nature>com.google.gwt.eclipse.core.gwtNature</nature>
+                  <nature>net.sf.eclipsecs.core.CheckstyleNature</nature>
+               </projectnatures>
+               <buildcommands>
+                  <buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
+               </buildcommands>
+               <classpathContainers>
+                  <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
+
+                  <classpathContainer>com.google.gwt.eclipse.core.GWT_CONTAINER</classpathContainer>
+               </classpathContainers>
+               <excludes>
+                  <exclude>com.google.gwt:gwt-servlet</exclude>
+                  <exclude>com.google.gwt:gwt-user</exclude>
+                  <exclude>com.google.gwt:gwt-dev</exclude>
+               </excludes>
+            </configuration>
+         </plugin>
+      </plugins>
+      <resources>
+         <resource>
+            <directory>src/main/java</directory>
+            <includes>
+               <include>**/api/**</include>
+               <include>**/*.gwt.xml</include>
+            </includes>
+         </resource>
+         <resource>
+            <directory>src/main/resources</directory>
+         </resource>
+      </resources>
+   </build>
+
+
+   <dependencies>
+
+
+
+      <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+         <version>${junit.version}</version>
+         <scope>test</scope>
+      </dependency>
+
+      <dependency>
+         <groupId>com.fasterxml.jackson.core</groupId>
+         <artifactId>jackson-core</artifactId>
+         <version>${jackson2.version}</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.fasterxml.jackson.core</groupId>
+         <artifactId>jackson-databind</artifactId>
+         <version>${jackson2.version}</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.fasterxml.jackson.core</groupId>
+         <artifactId>jackson-annotations</artifactId>
+         <version>${jackson2.version}</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.google.gwt</groupId>
+         <artifactId>gwt-user</artifactId>
+         <version>${gwt.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.google.gwt</groupId>
+         <artifactId>gwt-dev</artifactId>
+         <version>${gwt.version}</version>
+         <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+         <groupId>org.fusesource.restygwt</groupId>
+         <artifactId>restygwt</artifactId>
+         <version>${restygwt.version}</version>
+      </dependency>
+
+      <dependency>
+         <groupId>javax.ws.rs</groupId>
+         <artifactId>jsr311-api</artifactId>
+         <version>${jsr311-api.version}</version>
+      </dependency>
+
+   </dependencies>
+</project>
